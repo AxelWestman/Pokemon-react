@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
+
+  let [number, setNumber] = useState(0);
+
+  function incrementarNumero(){
+    setNumber(number  + 1);
+  }
+
   return (
     <>
-      <button>Next</button>
-      <div></div>
+      <button onClick={incrementarNumero}>Next</button>
+      <div>{number}</div>
     </>
   )
 }
