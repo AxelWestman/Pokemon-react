@@ -2,16 +2,25 @@ import { useState, useEffect } from 'react'
 
 function App() {
 
-  let [number, setNumber] = useState(0);
+  let [pokemonNumber, setPokemonNumber] = useState(0);
+  let [pokemonName, setPokemonName] = useState('');
 
   function incrementarNumero(){
-    setNumber(number  + 1);
+    setPokemonNumber(pokemonNumber  + 1);
   }
+
+ useEffect(() =>{
+    //console.log('valor al catualizar el estado: ' + pokemonNumber);
+    //Aqui debemos llamare al API
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}/`)
+    .then(result => result.json())
+    .then(data=>setPokemonName(data.name))
+ });
 
   return (
     <>
       <button onClick={incrementarNumero}>Next</button>
-      <div>{number}</div>
+      <div>{pokemonNumber} - {pokemonName}</div>
     </>
   )
 }
