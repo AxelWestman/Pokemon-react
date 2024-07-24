@@ -10,12 +10,20 @@ function App() {
   }
 
  useEffect(() =>{
-    //console.log('valor al catualizar el estado: ' + pokemonNumber);
+    console.log('valor al catualizar el estado: ' + pokemonNumber);
     //Aqui debemos llamare al API
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}/`)
-    .then(result => result.json())
-    .then(data=>setPokemonName(data.name))
- });
+    //fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}/`)
+    //.then(result => result.json())
+    //.then(data=>setPokemonName(data.name))
+
+    searchPokemon(pokemonNumber)
+ }, [pokemonNumber]);
+
+ let searchPokemon = async pokemonNumber=>{
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}/`)
+  const data = await response.json()
+  setPokemonName(data.name)
+ }
 
   return (
     <>
