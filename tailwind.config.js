@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'dmserif': ["DM Serif Display"]
+    },
+    extend: {
+      backgroundImage:{
+        'pixel': "url(public/image/background.png)"
+      }
+    },
   },
   plugins: [],
 }
