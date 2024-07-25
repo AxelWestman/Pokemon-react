@@ -10,7 +10,7 @@ export default {
     },
     extend: {
       backgroundImage:{
-        'pixel': "url(public/image/background.png)"
+        'pixel': "url(https://github.com/AxelWestman/Pokemon-react/blob/main/public/image/background.png?raw=true)"
       }
     },
   },

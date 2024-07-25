@@ -39,7 +39,7 @@ function App() {
       <div className="mb-3 font-dmserif  text-yellow-300 text-5xl">{pokemonName.toUpperCase()}</div>
         <div className="flex items-center justify-center w-80 h-96"><img src={pokemonPhoto} alt="pokemon-foto"  className='w-full mt-40' /></div>
           <div className="flex justify-center gap-10 mt-10">
-           <button onClick={restarNumero} className={pokemonNumber == 0 ? 'hidden' : 'bg-yellow-300 w-16 h-12 rounded font-dmserif text-lg'}>BACK</button>
+           <button onClick={restarNumero} className={pokemonNumber == 1 ? 'hidden' : 'bg-yellow-300 w-16 h-12 rounded font-dmserif text-lg'}>BACK</button>
             <button button onClick={incrementarNumero} className="bg-yellow-300 w-16 h-12 rounded  font-dmserif text-lg">NEXT</button>
           </div>
         </div>
